@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Salary Contribution System</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Salary Contribution System</h1>
+
+<form method="POST">
+
+<input
+type="text"
+name="name"
+placeholder="Employee Name"
+required>
+
+<input
+type="number"
+name="salary"
+placeholder="Salary"
+required>
+
+<input
+type="number"
+name="percent"
+placeholder="Contribution %"
+required>
+
+<button type="submit">
+Calculate
+</button>
+
+</form>
+
+{% if result %}
+
+<div class="result">
+
+<h2>Result</h2>
+
+<p>Name:
+{{ result.name }}</p>
+
+<p>Salary:
+₹{{ result.salary }}</p>
+
+<p>Contribution:
+₹{{ result.contribution }}</p>
+
+<p>Remaining Salary:
+₹{{ result.remaining }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
